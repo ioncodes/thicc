@@ -3,6 +3,7 @@ use rocket::Config;
 use rocket::config::Environment;
 use rocket::response::content::Html;
 use rocket_contrib::json::Json;
+use rocket_contrib::serve::StaticFiles;
 use askama::Template;
 use crate::db::Db;
 use crate::constants::{PROTOCOL, HOSTNAME, PORT};
@@ -45,6 +46,10 @@ impl Server {
             .port(PORT)
             .finalize()
             .unwrap();
-        rocket::custom(config).mount("/", routes![create_html, create_paste, paste]).launch();
+        rocket::custom(config)
+            .mount("/js", StaticFiles::from("static/js"))
+            .mount("/css", StaticFiles::from("static/css"))
+            .mount("/", routes![create_html, create_paste, paste])
+            .launch();
     }
 }

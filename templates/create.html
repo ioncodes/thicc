@@ -33,7 +33,9 @@
         }
 
         function _update() {
-            editor.session.setMode("ace/mode/" + document.getElementById('language').value);
+            let lang = document.getElementById('language').value;
+            if (lang === "cpp") { lang = "c_cpp"; }
+            editor.session.setMode("ace/mode/" + lang);
         }
     </script>
 </head>
