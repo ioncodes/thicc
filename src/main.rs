@@ -7,6 +7,7 @@ extern crate rand;
 extern crate sqlite;
 extern crate askama;
 extern crate base64;
+extern crate urldecode;
 
 mod server;
 mod db;

@@ -28,8 +28,8 @@ fn create_paste(paste: Json<Paste>) -> String {
 fn paste(id: String) -> Html<String> {
     let paste = Db::get_paste(id);
     let language: &str = &paste.language;
-    let decoded = &base64::decode(&paste.code).unwrap();
-    let code = std::str::from_utf8(decoded).unwrap(); // TODO: unescape first
+    let decoded = String::from(std::str::from_utf8(&base64::decode(&paste.code).unwrap()).unwrap());
+    let code = &urldecode::decode(decoded)[..]; // TODO: unescape first
     let template = PasteTemplate { code , language };
     Html(template.render().unwrap())
 }

@@ -13,6 +13,7 @@ sqlite = "*"
 rand = "*"
 askama = "*"
 base64 = "*"
+urldecode = "*"
 
 [dependencies.rocket_contrib]
 version = "*"
