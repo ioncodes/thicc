@@ -5,9 +5,19 @@
     <title>Thicc</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <style>
+        #editor {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
     <script>
         function _post() {
-            const code = document.getElementById('code').value;
+            const code = editor.getValue();
             const language = document.getElementById('language').value;
             const http = new XMLHttpRequest();
             const url = '/create';
@@ -21,18 +31,21 @@
                 'language': language
             }));
         }
+
+        function _update() {
+            editor.session.setMode("ace/mode/" + document.getElementById('language').value);
+        }
     </script>
 </head>
 <body>
     <form>
         <div class="form-group" style="margin: 15px">
-            <label for="code">Code</label>
-            <textarea class="form-control" id="code" rows="30"></textarea>
+            <div id="editor"></div>
         </div>
-        <div class="form-row" style="margin: 15px; float: right;">
+        <div class="form-row" style="margin: 15px; position: fixed; bottom: 15px; right: 15px">
             <div class="row">
                 <div class="col">
-                    <select class="form-control mb-2" id="language">
+                    <select class="form-control mb-2" id="language" onchange="_update()">
                         <option value="markup">Markup</option>
                         <option value="css">CSS</option>
                         <option value="clike">C-like</option>
@@ -201,5 +214,15 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setOptions({
+            fontFamily: "'Ubuntu Mono', monospace",
+            fontSize: "17pt"
+        });
+        editor.setTheme("ace/theme/monokai");
+        editor.session.setMode("ace/mode/javascript");
+    </script>
 </body>
 </html>
