@@ -14,7 +14,7 @@ pub struct Server { }
 
 #[get("/create")]
 fn create_html() -> Html<String> {
-    let template = CreateTemplate { name: "Layle" };
+    let template = CreateTemplate { protocol: PROTOCOL, host: HOSTNAME, port: &PORT.to_string()[..] };
     Html(template.render().unwrap())
 }
 
@@ -29,7 +29,7 @@ fn paste(id: String) -> Html<String> {
     let paste = Db::get_paste(id);
     let language: &str = &paste.language;
     let decoded = &base64::decode(&paste.code).unwrap();
-    let code: &str = std::str::from_utf8(decoded).unwrap();
+    let code = std::str::from_utf8(decoded).unwrap(); // TODO: unescape first
     let template = PasteTemplate { code , language };
     Html(template.render().unwrap())
 }
