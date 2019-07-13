@@ -64,7 +64,7 @@ impl Server {
         rocket::custom(config)
             .mount("/js", StaticFiles::from("static/js"))
             .mount("/css", StaticFiles::from("static/css"))
-            .mount("/", routes![create_html, create_paste, paste, paste_raw])
+            .mount("/", routes![create_html, create_paste, paste, paste_raw, icon])
             .launch();
     }
 }
