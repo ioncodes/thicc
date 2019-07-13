@@ -7,7 +7,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b6717a1-a774-477c-86ad-f33cedac32cb" name="Default Changelist" comment="replace highlight.js with ace.js. no cdn. get coffee.">
+    <list default="true" id="3b6717a1-a774-477c-86ad-f33cedac32cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.rs" afterDir="false" />
     </list>
@@ -54,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/server.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+            <state relative-caret-position="292">
+              <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
               <folding>
                 <element signature="e#1222#1223#0" expanded="true" />
                 <element signature="e#1282#1283#0" expanded="true" />
@@ -273,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563011513039</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="remove todo and add favicon.">
+      <created>1563011972000</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563011972000</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -315,7 +322,8 @@
     <MESSAGE value="Well pastes actually look cool now." />
     <MESSAGE value="implemented ace editor. TODO: fix hightlight.js includes" />
     <MESSAGE value="replace highlight.js with ace.js. no cdn. get coffee." />
-    <option name="LAST_COMMIT_MESSAGE" value="replace highlight.js with ace.js. no cdn. get coffee." />
+    <MESSAGE value="remove todo and add favicon." />
+    <option name="LAST_COMMIT_MESSAGE" value="remove todo and add favicon." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/thicc.iml">
@@ -408,8 +416,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+        <state relative-caret-position="292">
+          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
           <folding>
             <element signature="e#1222#1223#0" expanded="true" />
             <element signature="e#1282#1283#0" expanded="true" />

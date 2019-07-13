@@ -36,6 +36,15 @@ fn paste(id: String) -> Html<String> {
     Html(template.render().unwrap())
 }
 
+#[get("/<id>/raw")]
+fn paste_raw(id: String) -> String {
+    let paste = Db::get_paste(id);
+    let language: &str = &paste.language;
+    let decoded = String::from(std::str::from_utf8(&base64::decode(&paste.code).unwrap()).unwrap());
+    let code = urldecode::decode(decoded);
+    code
+}
+
 #[get("/favicon.ico")]
 fn icon() -> Option<NamedFile> {
     NamedFile::open(Path::new("static/icons/favicon.ico")).ok()
@@ -55,7 +64,7 @@ impl Server {
         rocket::custom(config)
             .mount("/js", StaticFiles::from("static/js"))
             .mount("/css", StaticFiles::from("static/css"))
-            .mount("/", routes![create_html, create_paste, paste, icon])
+            .mount("/", routes![create_html, create_paste, paste, paste_raw])
             .launch();
     }
 }
