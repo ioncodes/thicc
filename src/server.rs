@@ -1,4 +1,4 @@
-use rocket::response::Redirect;
+use rocket::response::{Redirect, NamedFile};
 use rocket::Config;
 use rocket::config::Environment;
 use rocket::response::content::Html;
@@ -10,6 +10,7 @@ use crate::constants::{PROTOCOL, HOSTNAME, PORT};
 use crate::create_template::CreateTemplate;
 use crate::paste_template::PasteTemplate;
 use crate::paste::Paste;
+use std::path::Path;
 
 pub struct Server { }
 
@@ -30,9 +31,14 @@ fn paste(id: String) -> Html<String> {
     let paste = Db::get_paste(id);
     let language: &str = &paste.language;
     let decoded = String::from(std::str::from_utf8(&base64::decode(&paste.code).unwrap()).unwrap());
-    let code = &urldecode::decode(decoded)[..]; // TODO: unescape first
+    let code = &urldecode::decode(decoded)[..];
     let template = PasteTemplate { code , language };
     Html(template.render().unwrap())
+}
+
+#[get("/favicon.ico")]
+fn icon() -> Option<NamedFile> {
+    NamedFile::open(Path::new("static/icons/favicon.ico")).ok()
 }
 
 impl Server {
@@ -49,7 +55,7 @@ impl Server {
         rocket::custom(config)
             .mount("/js", StaticFiles::from("static/js"))
             .mount("/css", StaticFiles::from("static/css"))
-            .mount("/", routes![create_html, create_paste, paste])
+            .mount("/", routes![create_html, create_paste, paste, icon])
             .launch();
     }
 }
