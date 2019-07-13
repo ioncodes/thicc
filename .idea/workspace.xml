@@ -7,10 +7,9 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b6717a1-a774-477c-86ad-f33cedac32cb" name="Default Changelist" comment="">
+    <list default="true" id="3b6717a1-a774-477c-86ad-f33cedac32cb" name="Default Changelist" comment="add select generation script for languages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/paste.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/paste.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="53" column="27" lean-forward="true" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+            <state relative-caret-position="670">
+              <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
               <folding>
                 <element signature="e#1222#1223#0" expanded="true" />
                 <element signature="e#1282#1283#0" expanded="true" />
@@ -65,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="224" column="41" selection-start-line="224" selection-start-column="41" selection-end-line="224" selection-end-column="41" />
+            <state relative-caret-position="613">
+              <caret line="170" column="56" lean-forward="true" selection-start-line="170" selection-start-column="56" selection-end-line="170" selection-end-column="56" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -102,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/paste.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="25" column="22" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="22" />
+            <state relative-caret-position="459">
+              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -133,6 +132,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>html</find>
+      <find>text</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,8 +150,8 @@
         <option value="$PROJECT_DIR$/src/main.rs" />
         <option value="$PROJECT_DIR$/Cargo.toml" />
         <option value="$PROJECT_DIR$/src/server.rs" />
-        <option value="$PROJECT_DIR$/templates/create.html" />
         <option value="$PROJECT_DIR$/templates/paste.html" />
+        <option value="$PROJECT_DIR$/templates/create.html" />
       </list>
     </option>
   </component>
@@ -203,7 +203,7 @@
     <property name="org.rust.hideDetachedFileNotificationsC:/Users/luca/IdeaProjects/thicc/src/paste.rs" value="true" />
     <property name="org.rust.hideDetachedFileNotificationsC:/Users/luca/IdeaProjects/thicc/src/paste_template.rs" value="true" />
     <property name="org.rust.hideDetachedFileNotificationsC:/Users/luca/IdeaProjects/thicc/src/server.rs" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -295,7 +295,21 @@
       <option name="project" value="LOCAL" />
       <updated>1563012325446</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="remove ugly vertical line">
+      <created>1563012509478</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1563012509478</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add select generation script for languages">
+      <created>1563013260871</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1563013260871</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -340,7 +354,9 @@
     <MESSAGE value="remove todo and add favicon." />
     <MESSAGE value="remove favicon from routes as it fucks up the paste routing." />
     <MESSAGE value="add icon route again. looks like the routing bug is random and has nothing to do with this??" />
-    <option name="LAST_COMMIT_MESSAGE" value="add icon route again. looks like the routing bug is random and has nothing to do with this??" />
+    <MESSAGE value="remove ugly vertical line" />
+    <MESSAGE value="add select generation script for languages" />
+    <option name="LAST_COMMIT_MESSAGE" value="add select generation script for languages" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/thicc.iml">
@@ -412,10 +428,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/paste.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/server.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="53" column="27" lean-forward="true" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+        <state relative-caret-position="670">
+          <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
           <folding>
             <element signature="e#1222#1223#0" expanded="true" />
             <element signature="e#1282#1283#0" expanded="true" />
@@ -425,20 +448,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/create.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="224" column="41" selection-start-line="224" selection-start-column="41" selection-end-line="224" selection-end-column="41" />
+        <state relative-caret-position="613">
+          <caret line="170" column="56" lean-forward="true" selection-start-line="170" selection-start-column="56" selection-end-line="170" selection-end-column="56" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/paste.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="25" column="22" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="22" />
         </state>
       </provider>
     </entry>
