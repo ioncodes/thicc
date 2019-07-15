@@ -39,7 +39,6 @@ fn paste(id: String) -> Html<String> {
 #[get("/<id>/raw")]
 fn paste_raw(id: String) -> String {
     let paste = Db::get_paste(id);
-    let language: &str = &paste.language;
     let decoded = String::from(std::str::from_utf8(&base64::decode(&paste.code).unwrap()).unwrap());
     let code = urldecode::decode(decoded);
     code
@@ -57,7 +56,7 @@ impl Server {
         Db::initialize();
 
         let config = Config::build(Environment::Staging)
-            .address("127.0.0.1")
+            .address("0.0.0.0")
             .port(7000)
             .finalize()
             .unwrap();
