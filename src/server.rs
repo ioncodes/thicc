@@ -57,8 +57,8 @@ impl Server {
         Db::initialize();
 
         let config = Config::build(Environment::Staging)
-            .address("0.0.0.0")
-            .port(PORT)
+            .address("127.0.0.1")
+            .port(7000)
             .finalize()
             .unwrap();
         rocket::custom(config)

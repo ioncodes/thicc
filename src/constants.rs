@@ -1,3 +1,3 @@
-pub const PROTOCOL: &str = "http";
-pub const HOSTNAME: &str = "localhost";
-pub const PORT: u16 = 8000;
+pub const PROTOCOL: &str = "https";
+pub const HOSTNAME: &str = "thicc.layle.io";
+pub const PORT: u16 = 80;

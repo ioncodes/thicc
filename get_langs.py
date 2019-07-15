@@ -8,9 +8,9 @@ files = [f for f in listdir(PATH) if isfile(join(PATH, f))]
 
 langs = []
 for file in files:
-	match = re.search(REGEX, file, re.IGNORECASE)
-	if match:
-		langs.append(match.group(1))
+    match = re.search(REGEX, file, re.IGNORECASE)
+    if match:
+        langs.append(match.group(1))
 
 for lang in langs:
-	print "<option value=\"%s\">%s</option>" % (lang, lang)
+    print "<option value=\"%s\">%s</option>" % (lang, lang)
