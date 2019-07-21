@@ -7,7 +7,7 @@ pub struct Db { }
 
 impl Db {
     pub fn initialize() {
-        let connection = sqlite::open("./pastes.db").unwrap();
+        let connection = sqlite::open("/tmp/pastes.db").unwrap();
         let _ = connection.execute("CREATE TABLE IF NOT EXISTS pastes (id TEXT UNIQUE, code TEXT, language TEXT)");
     }
 
@@ -17,7 +17,7 @@ impl Db {
             .take(50)
             .collect();
 
-        let connection = sqlite::open("./pastes.db").unwrap();
+        let connection = sqlite::open("/tmp/pastes.db").unwrap();
 
         let mut cursor = connection
             .prepare("INSERT INTO pastes VALUES (?, ?, ?)")
@@ -31,7 +31,7 @@ impl Db {
     }
 
     pub fn get_paste(id: String) -> Paste {
-        let connection = sqlite::open("./pastes.db").unwrap();
+        let connection = sqlite::open("/tmp/pastes.db").unwrap();
 
         let mut cursor = connection
             .prepare("SELECT code, language FROM pastes WHERE id = ?")
