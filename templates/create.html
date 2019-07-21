@@ -24,7 +24,7 @@
             http.open('POST', url, true);
             http.setRequestHeader('Content-type', 'application/json');
             http.onload = function() {
-                window.location.replace('{{protocol}}://{{host}}:{{port}}/' + http.responseText);
+                window.location.replace('{{protocol}}://{{host}}/' + http.responseText);
             };
             http.send(JSON.stringify({
                 'code': btoa(escape(code)),
